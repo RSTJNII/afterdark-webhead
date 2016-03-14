@@ -18,6 +18,8 @@
 # limitations under the License.
 #
 
+node.default['nginx']['repo_source'] = 'nginx'
+
 include_recipe 'nginx'
 
 template '/etc/nginx/sites-available/000-afterdark' do
