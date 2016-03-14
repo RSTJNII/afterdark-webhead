@@ -3,6 +3,7 @@
 # Recipe:: nginx
 #
 # Copyright 2014, Rackspace, US Inc.
+# Copyright 2016, Tom Noonan II
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,19 +18,20 @@
 # limitations under the License.
 #
 
-node.default['rackspace_nginx']['config']['default_site_enabled'] = false
-node.default['rackspace_nginx']['repo_source'] = 'nginx'
+include_recipe 'nginx'
 
-include_recipe "rackspace_nginx"
-
-template "/etc/nginx/sites-available/000-afterdark" do
-  source "000-afterdark.erb"
+template '/etc/nginx/sites-available/000-afterdark' do
+  source '000-afterdark.erb'
   mode 0644
-  owner "root"
-  group "root"
-  notifies :reload, "service[nginx]"
+  owner 'root'
+  group 'root'
+  notifies :reload, 'service[nginx]'
 end
 
-nginx_site "000-afterdark" do
+nginx_site '000-afterdark' do
   enable true
+end
+
+nginx_site '000-default' do
+  enable false
 end

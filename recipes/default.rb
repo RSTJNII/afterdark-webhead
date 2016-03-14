@@ -3,6 +3,7 @@
 # Recipe:: default
 #
 # Copyright 2014, Rackspace, US Inc.
+# Copyright 2016, Tom Noonan II
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,13 +18,5 @@
 # limitations under the License.
 #
 
-critical_recipes = [
-                    "afterdark-webhead::acl",
-                    "afterdark-webhead::content",
-                    "afterdark-webhead::nginx",
-                   ]
-
-# Run critical recipes
-critical_recipes.each do | recipe |
-  include_recipe recipe
-end
+include_recipe('afterdark-webhead::_content')
+include_recipe('afterdark-webhead::_nginx')

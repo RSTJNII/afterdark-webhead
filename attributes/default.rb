@@ -3,6 +3,7 @@
 # Attributes:: default
 #
 # Copyright 2014, Rackspace, US Inc.
+# Copyright 2016, Tom Noonan II
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,9 +18,9 @@
 # limitations under the License.
 #
 
-default['afterdark-webhead']['content-user']  = 'ad-content'
+default['afterdark-webhead']['content-user'] = 'ad-content'
 default['afterdark-webhead']['content-group'] = 'ad-content'
-default['afterdark-webhead']['content-path']  = '/var/www/afterdark'
-default['afterdark-webhead']['content-source']  = 'https://github.com/RSTJNII/after-dark-css.git'
+default['afterdark-webhead']['content-path'] = '/var/www/afterdark'
+default['afterdark-webhead']['content-source'] = 'https://github.com/RSTJNII/after-dark-css.git'
 
-default['afterdark-webhead']['server-name']   = node['hostname']
+default['afterdark-webhead']['server-name'] = node['hostname']

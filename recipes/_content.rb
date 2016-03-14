@@ -3,6 +3,7 @@
 # Recipe:: content: Install the content of the site
 #
 # Copyright 2014, Rackspace, US Inc.
+# Copyright 2016, Tom Noonan II
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,9 +19,9 @@
 #
 
 user node['afterdark-webhead']['content-user'] do
-  comment "AfterDark Web Content"
+  comment 'AfterDark Web Content'
   system true
-  shell "/bin/false"
+  shell '/bin/false'
 end
 
 group node['afterdark-webhead']['content-group'] do
@@ -36,7 +37,7 @@ directory node['afterdark-webhead']['content-path'] do
   action :create
 end
 
-package "git" do
+package 'git' do
   action :install
 end
 
