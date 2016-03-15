@@ -32,3 +32,14 @@ suites:
   - name: default
     run_list:
       - recipe[afterdark-webhead::default]
+
+  - name: ssl
+    run_list:
+      - recipe[test_nginx_certs] # This is just forcing it to be included
+      - recipe[afterdark-webhead::ssl]
+    attributes:
+      afterdark-webhead:
+        ssl:
+          cert_cookbook: test_nginx_certs
+          cert: certs/test_nginx.cert.pem
+          key: certs/test_nginx.key.pem

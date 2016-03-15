@@ -27,7 +27,8 @@ template '/etc/nginx/sites-available/000-afterdark' do
   mode 0644
   owner 'root'
   group 'root'
-  notifies :reload, 'service[nginx]'
+  notifies :reload, 'service[nginx]', :delayed
+  variables(ssl: false)
 end
 
 nginx_site '000-afterdark' do

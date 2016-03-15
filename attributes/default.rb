@@ -24,3 +24,10 @@ default['afterdark-webhead']['content-path'] = '/var/www/afterdark'
 default['afterdark-webhead']['content-source'] = 'https://github.com/RSTJNII/after-dark-css.git'
 
 default['afterdark-webhead']['server-name'] = node['hostname']
+
+# SSL certs for the SSL recipe
+default['afterdark-webhead']['ssl']['cert_cookbook'] = nil
+# Nginx combined cert to pull from node['afterdark-webhead']['ssl']['cert_cookbook']
+default['afterdark-webhead']['ssl']['cert'] = nil
+# Nginx SSL key to pull from node['afterdark-webhead']['ssl']['cert_cookbook']
+default['afterdark-webhead']['ssl']['key'] = nil
